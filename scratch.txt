@@ -1,0 +1,103 @@
+<!-- <a href="http://jeffscheven.com" title="Jeff Scheven website" class="slide">
+  <img src="images/jeffscheven.jpg" alt="Jeff Scheven Website image" />
+</a>
+</div> --> <!--! .slide -->
+<!--><figure class="slide">
+  <img src="images/paperbag.jpg" alt="Paper Bag Records image" />
+  <figcaption>
+    <h2>Paper Bag Records website</h2>
+    <p>Art Direction, IA and Prototyping, Graphic Design, Front End Development (HTML 5, CSS3, jQuery), Wordpress implementation and PHP. Visit <a href="http://paperbagrecords.com" title="paperbagrecords.com">paperbagrecords.com</a>.</p>
+  </figcaption>
+</figure>
+<figure class="slide">
+  <img src="images/delianmode.jpg" alt="The Delian Mode image" />
+  <figcaption>
+    <h2>The Delian Mode website</h2>
+    <p>Graphic Design, Front End Development (HTML, CSS3, jQuery), Ruby on Rails custom CMS. Visit <a href="http://thedelianmode.com" title="thedelianmode.com.com">thedelianmode.com</a>.</p>
+  </figcaption>
+</figure>
+<figure class="slide">
+  <img src="images/alphabet-city.jpg" alt="Alphabet City image" />
+  <figcaption>
+    <h2>Alphabet City website</h2>
+    <p>Front End Development (HTML, CSS, javascript), Ruby on Rails custom CMS. Visit <a href="http://alphabet-city.org" title="alphabet-city.org">alphabet-city.org</a>.</p>
+  </figcaption>
+</figure>
+<figure class="slide">
+  <img src="images/moz.jpg" alt="Mozilla image" />
+  <figcaption>
+    <h2>Mozilla Illustrations</h2>
+    <p>Graphic Design and Illustrations.</p>
+  </figcaption>
+</figure> -->
+
+
+
+
+ <dl class="project-info">
+  <dt>Client</dt>
+  <dd>Last Gang Entertainment</dd>
+  <dt>Year</dt>
+  <dd>2010</dd>
+</dl>
+<dl class="project-services">
+  <dt>Services</dt>
+  <dd>Art direction, information architecture design, graphic design, front end development (HTML5, CSS3, jQuery), Wordpress implementation and PHP Development</dd>
+</dl>
+<dl>
+  <dt>Website</dt>
+  <dd><a href="http://lastgangentertainment.com" title="lastgangentertainment.com">lastgangentertainment.com</a></dd>
+</dl>
+
+
+
+
+
+
+
+<div class="col">
+  <section id="about">
+    <h2>What is Dust and Mold?</h2>
+    <img src="../graphics/portrait.jpg" alt="Portrait" />
+    <p>Dust and Mold is the design consultancy of Montréal-based interactive designer
+    <a href="http://kevinfinlayson.com" title="Kevin Finlayson">Kevin Finlayson</a> (nice to meet you!)</p>
+    <p>My goal in every project is to find a unique, beautifully-realized way to meaningfully communicate the message of your organization, using both tried and true methods and exciting new tools.</p>
+  </section><!--! end of #about -->
+  <section id="contact">
+    <h2>Get in touch</h2>
+    <p>Get in touch with me at <a href="mailto:kevin@dustandmold.net?subject=website%20contact" title="kevin@dustandmold.net">kevin@dustandmold.net</a> for work inquiries, to get a quote or just to say hi.</p>
+    <p>To help me provide an accurate quote, please download and fill out my project outline form, and attach it to your email.</p>
+    <p><a href="/files/project-outline.rtf" title="Project Outline form (.rtf, 13KB)">Project Outline form (.rtf, 13KB)</a></p>
+  </section><!--! end of #contact -->
+</div><!--! end of .col -->
+<div class="col">
+  <section id="services">
+    <h2>Services and expertise offered</h2>
+    <p>I work in a variety of roles with distributed teams, or provide turn-key production incuding:</p>
+    <ul>
+      <li>Graphic and interactive design for desktop and mobile</li>
+      <li>Front-end development including HTML5, CSS3, and javascript (jQuery primarily)</li>
+      <li>CMS implementation (Expression Engine, Wordpress, Perch)</li>
+      <li>E-Commerce service templating (Big Cartel, Shopify)</li>
+      <li>Server-side programming (PHP, Ruby)</li>
+      <li>Application development (Ruby on Rails)</li>
+    </ul>
+    <p>I’m also experienced with information architecture design, prototyping, research, user testing and feedback, as well as overall project management.</p>
+  </section><!--! end of #services -->
+</div><!--! end of .col -->
+
+
+
+
+
+
+
+<footer>
+  <p id="copyright">© Copyright 2010 Dust and Mold Design, All Rights Reserved</p><!--! end of #copyright -->
+  <ul id="elsewhere">
+    <li><a href="http://twitter.com/kevinfinlayson" title="Twitter">Twitter</a></li>
+    <li><a href="http://dribbble.com/kevinfinlayson" title="Dribbble">Dribbble</a></li>
+  </ul><!--! end of elsewhere -->
+</footer>
+
+
