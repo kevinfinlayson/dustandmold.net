@@ -13,6 +13,15 @@
   //   as an argument, and the collection as `this`
 
 
+
+  // Like what it says
+  $.fn.replaceClass = function(toReplace,replaceWith){
+   return $(this).each(function(){
+     return $(this).removeClass(toReplace).addClass(replaceWith);
+   });
+  }
+
+  // Like 'load' for images
   $.fn.imagesLoaded = function(callback){
     var elems = this.filter('img'),
         len   = elems.length;

@@ -301,6 +301,8 @@ slideshow
 #slideshow-container {
   position: relative;
   width: 1000px;
+  min-height: 632px;
+  height: auto;
   padding: 14px 0px 0px 14px;
   float: left;
   -webkit-border-radius: 10px;
@@ -315,15 +317,17 @@ slideshow
 
 #slideshow {
   width: 1000px;
+  height: 770px;
   float: left;
-/*  filter:alpha(opacity=0);
+  filter:alpha(opacity=0);
   opacity: 0;
-*/}
+  display: none;
+}
 
 .no-js #slideshow {
-/*  filter:alpha(opacity=100);
+  filter:alpha(opacity=100);
   opacity: 1;
-*/}
+}
 
 #slide-info {
   width: 980px;
@@ -332,16 +336,19 @@ slideshow
   text-align: center;
   padding: 10px 10px 20px;
   font-size: 0.875em;
+  display: none;
 }
 
 #slide-info-content {
-/*  filter:alpha(opacity=0);
-  opacity: 0;
-*/  /*width: 470px; */
+  width: 470px;
   padding: 0px 255px;
 }
 
-.slide {
+.slide-info {
+  display: none;
+}
+
+.thumb {
   margin: 0px 14px 14px 0px;
   width: 319px;
   height: auto;
@@ -349,17 +356,18 @@ slideshow
   text-align: center;
   float: left;
   position: relative;
+  display: block;
 }
 
-.slide img {
+.thumb img {
   width: 319px;
   height: 261px;
   z-index: 0;
   float: left;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
-.slide img.slide-overlay {
+.thumb img.thumb-overlay {
   float: none;
   z-index: 1;
   width: 319px;
@@ -370,28 +378,24 @@ slideshow
   left: 0px;
 }
 
-.slide-info {
-/*  width: 510px;*/
-  float: left;
-  width: 319px;
-  margin-bottom: 20px;
-}
-
-.slide-info p {
+.thumb p {
   display: none;
 }
 
-.slide-info h3 {
+.thumb h3 {
+  float: left;
+  width: 319px;
   line-height: 1.1;
   text-shadow: 0px -1px 2px rgba(0,0,0,0.75);
   font-size: 1em;
   color: #869da4;
-  margin-bottom: 0px;
+  margin-bottom: 14px;
 }
 
 .visit {
   padding: 10px;
   margin-bottom: 10px;
+  display: none;
 }
 
 a.visit-button, a.visit-button:visited {
@@ -417,13 +421,28 @@ a.visit-button, a.visit-button:visited {
   background-image:linear-gradient(top, #54b4df 0%, #2081ad 100%);
 }
 
-.no-js .slide-info {
-/*  filter:alpha(opacity=100);
-  opacity: 1;
-*/}
+#top-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 2000;
+  display: block;
+  height: 20px;
+  width: 20px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #66bfec;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  text-shadow: none;
+  filter:alpha(opacity=0);
+  opacity: 0;
+}
 
 #previous, #next {
-  display: block;
+  display: none;
   position: absolute;
   top: 0px;
   background: transparent;
