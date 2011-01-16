@@ -9,6 +9,7 @@ $(document).ready(function(){
   // Add the slideshow navigation and info elements
   $("#slideshow-container").prepend('<a href="#-do" id="top-close">x</a><div id="pager"></div><!--! end of #pager --><a href="#" id="previous"><span>Previous</span></a><a href="#" id="next"><span>Next</span></a>');
   $("#slideshow-container").append('<div id="slide-info"><div id="slide-info-content"></div><!--! end of #slide-info-content --><a href="#" id="close">Close</a></div><!--! end of #slide-info -->');
+  $(".slide").prepend('<img src="graphics/slide-overlay.png" alt="slide overlay graphic" class="slide-overlay" />');
   $("#slideshow").cycle({
     timeout: 0,
     speed: 100,
@@ -19,25 +20,25 @@ $(document).ready(function(){
     pager: "#pager",
     pagerAnchorBuilder: function(idx, slide) {
       var slideTitle = $(".slide-info h3", slide).html();
-      var slideImgSrc = $("img", slide).attr("src");
-      return '<a href="#" class="thumb" title="' + slideTitle + '"><img src="graphics/thumb-overlay-medium.png" alt="thumb overlay graphic" class="thumb-overlay" /><img src="' + slideImgSrc + '" alt="' + slideTitle + ' image" /><h3>' + slideTitle + '</h3></a>';
+      var slideImgSrc = $("img:nth-child(2)", slide).attr("src");
+      return '<a href="#" class="thumb" title="' + slideTitle + '"><img src="graphics/thumb-overlay.png" alt="thumb overlay graphic" class="thumb-overlay" /><img src="' + slideImgSrc + '" alt="' + slideTitle + ' image" /><h3>' + slideTitle + '</h3></a>';
     }
   });
   // Switch from pager to slideshow
   $("#pager a").click(function(){
     $("#pager").fadeOut(100, function(){
       $(this).hide();
-      $("#slideshow-container").height("900px");
+      $("#slideshow-container").height('900px').removeClass('thumb-display');
       $("#slideshow").show().animate({opacity:1},100);
-      $("#previous, #next, #slide-info, #slide-info-content, #top-close").show().animate({opacity:1},300);
+      $("#previous, #next, #slide-info, #slide-info-content, #top-close, .slide-overlay").show().animate({opacity:1},300);
     });
   });
   // Switch from slideshow back to pager
   $("#close, #top-close").click(function(e){
     e.preventDefault();
-    $("#slideshow, #previous, #next, #slide-info, #slide-info-content, #top-close").fadeOut(100, function(){
+    $("#slideshow, #previous, #next, #slide-info, #slide-info-content, #top-close, .slide-overlay").fadeOut(100, function(){
       $(this).hide();
-      $("#slideshow-container").css({"height":"auto", "min-height":"632px"});
+      $("#slideshow-container").css({"height":"auto", "min-height":"632px"}).addClass('thumb-display');
       $("#pager").show().animate({opacity:1},100);
     })
   })
