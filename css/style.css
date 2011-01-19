@@ -322,7 +322,7 @@ slideshow
 
 #slideshow {
   width: 954px;
-  height: 770px;
+  height: 784px;
   float: left;
   filter:alpha(opacity=0);
   opacity: 0;
@@ -462,7 +462,8 @@ a.visit-button, a.visit-button:visited {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
-  background-color: #66bfec;
+  text-indent: -999em;
+  background: #66bfec url(../graphics/close.png) no-repeat center center;
   color: #fff;
   text-align: center;
   font-weight: 700;
@@ -478,7 +479,7 @@ a.visit-button, a.visit-button:visited {
   background: transparent;
   z-index: 1000;
   width: 470px;
-  height: 824px;
+  height: 770px;
   filter:alpha(opacity=0);
   opacity: 0;
 }
