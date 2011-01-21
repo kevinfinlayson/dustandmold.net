@@ -157,29 +157,41 @@ body {
   font-size: 100%;
 /*  -webkit-text-size-adjust: none;*/
   color: #869da4;
-  font-family: "proxima-nova-1", "proxima-nova-2", "helevetica neue", helvetica, arial;
+  font-family: "proxima-nova-1","proxima-nova-2", "helevetica neue", helvetica, arial;
+/*  font-family: "calluna-sans-1","calluna-sans-2", "helevetica neue", helvetica, arial;*/
   text-shadow: 0px -1px 1px rgba(0,0,0,1);
 }
 
-h2, h3 {
+h2, h3, h4 {
   font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2", georgia, times, "times new roman", sans-serif;
-  -webkit-font-smoothing: antialiased;
   line-height: 1.3;
-  color: #c9d4d7;
+  color: #dde4e5;
   margin-bottom: 10px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
 }
 
 h2 {
   font-size: 2.25em;
-  font-weight: 400;
   text-align: center;
   width: 810px;
-  margin: 0px auto 40px auto;
+  margin: 0px 105px 40px 105px;
   text-shadow: 0px -1px 3px rgba(0,0,0,1);
 }
 
 h3 {
   font-size: 1.125em;
+  font-weight: 700;
+}
+
+h4 {
+  font-family: "proxima-nova-1","proxima-nova-2", "helevetica neue", helvetica, arial;
+/*  font-family: "calluna-sans-1","calluna-sans-2", "helevetica neue", helvetica, arial;*/
+  font-size: 82.5%;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  margin-bottom: 1em;
 }
 
 a, a:visited {
@@ -219,48 +231,19 @@ header {
 }
 
 section {
-  margin-bottom: 60px;
+  width: 1020px;
+  margin: 0px auto 40px auto;
+  float: left;
 }
 
 /*
 global
 */
 
-.column {
-  float: left;
-  margin-left: 40px;
-}
-
-.medium .half {
-  width: 385px;
-}
-
 .first, #contact li.first {
   margin-left: 0px;
 }
 
-.medium {
-  width: 810px;
-  padding: 0px 85px;
-}
-
-.css-columns {
-  -webkit-column-gap: 40px;
-  -moz-column-gap: 40px;
-  column-gap: 40px;
-}
-
-.two-columns {
-  -webkit-column-count: 2;
-  -moz-column-count: 2;
-  column-count: 2;
-}
-
-.three-columns {
-  -webkit-column-count: 3;
-  -moz-column-count: 3;
-  column-count: 3;
-}
 
 /*
 header
@@ -280,6 +263,11 @@ intro
 */
 
 #strapline {
+  width: 810px;
+  margin: 0px 85px 40px 85px;
+}
+
+#strapline p {
   font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2", georgia, times, "times new roman", sans-serif;
   font-size: 3em;
   line-height: 1.3;
@@ -287,7 +275,7 @@ intro
   text-align: center;
   -webkit-font-smoothing: antialiased;
   text-shadow: 0px -1px 3px rgba(0,0,0,0.75);
-  color: #c9d4d7;
+  color: #dde4e5;
 }
 
 #strapline a {
@@ -312,7 +300,7 @@ slideshow
   -webkit-box-shadow: 0px 1px 2px rgba(255,255,255,0.1);
   -moz-box-shadow: 0px 1px 2px rgba(255,255,255,0.1);
   box-shadow: 0px 1px 2px rgba(255,255,255,0.1);
-  margin: 0px 20px 60px 20px;
+  margin: 0px 20px 60px;
 }
 
 #slideshow-container.thumb-display {
@@ -540,31 +528,48 @@ a.visit-button, a.visit-button:visited {
   background-color: #66bfec;
 }
 
+/*
+Introduction
+*/
+
+#design-and-build, #meaningful-presentation, #my-toolkit {
+  width: 300px;
+  padding: 0px 20px;
+  float: left;
+}
+
+/*
+manifesto
+*/
+
+#manifesto {
+/*  width: 1020px;
+  margin: 0px 25px 20px 85px;
+*/}
+
 #beliefs li {
   margin-bottom: 20px;
-  padding-left: 60px;
-  -webkit-column-gap: 100px;
-  -moz-column-gap: 100px;
-  column-gap: 100px;
-
+  width: 420px;
+  float: left;
+  padding: 0px 20px 0px 70px;
 }
 
 #beliefs li span {
-  font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2", georgia, times, "times new roman", sans-serif;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   border-radius: 30px;
   font-weight: 700;
   display: block;
-  background-color: #37a7da;
-  color: #fff;
-  font-size: 1.125em;
-  line-height: 2.222;
-  height: 40px;
-  width: 40px;
+  background-color: #465256;
+  color: #171b1c;
+  font-size: 1em;
+  line-height: 2;
+  height: 2em;
+  width: 2em;
   text-align: center;
+  font-weight: 700;
   float: left;
-  margin-left: -60px;
+  margin-left: -50px;
   -webkit-font-smoothing: antialiased;
   text-shadow: none;
   letter-spacing: 0.1em;
@@ -576,6 +581,7 @@ a.visit-button, a.visit-button:visited {
 
 #beliefs li strong {
   color: #c9d4d7;
+  font-weight: 400;
 }
 
 /*
@@ -634,7 +640,8 @@ contact
 }
 
 #business-card h3 {
-  font-family: "proxima-nova-1", "proxima-nova-2", "helevetica neue", helvetica, arial;
+/*  font-family: "calluna-sans-1","calluna-sans-2", "helevetica neue", helvetica, arial;   */
+  font-family: "proxima-nova-1","proxima-nova-2", "helevetica neue", helvetica, arial;
   font-weight: 400;
   font-size: 1.25em;
   color: #2b2f33;
