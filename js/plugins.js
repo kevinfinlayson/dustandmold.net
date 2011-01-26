@@ -1,6 +1,15 @@
 
 // remap jQuery to $
 (function($){
+  
+  // Like what it says
+  $.fn.replaceClass = function(toReplace,replaceWith){
+   return $(this).each(function(){
+     return $(this).removeClass(toReplace).addClass(replaceWith);
+   });
+  }
+  
+
 
   // $('img.photo',this).imagesLoaded(myFunction)
   // execute a callback when all images have loaded.
@@ -12,16 +21,6 @@
   // callback function is passed the last image to load
   //   as an argument, and the collection as `this`
 
-
-
-  // Like what it says
-  $.fn.replaceClass = function(toReplace,replaceWith){
-   return $(this).each(function(){
-     return $(this).removeClass(toReplace).addClass(replaceWith);
-   });
-  }
-
-  // Like 'load' for images
   $.fn.imagesLoaded = function(callback){
     var elems = this.filter('img'),
         len   = elems.length;
