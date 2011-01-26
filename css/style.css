@@ -681,30 +681,12 @@ footer a:hover, footer a:focus {
   color: #869da4;
 }
 
-/*#elsewhere {
-  width: 7em;
-  margin: 0px auto;
-}               */
+/*
+webfont
+*/
 
-/*#elsewhere a, #elsewhere a:visited {
-  width: 2.2em;
-  float: left;
-  height: 2.2em;
-  display: block;
-  -webkit-border-radius: 1.5em;
-  -moz-border-radius: 1.5em;
-  border-radius: 1.5em;
-  background-color: #637b83;
-}
-
-#elsewhere a:hover, #elsewhere a:focus {
-  background-color: #7c959c;
-}           */
-
-/*#elsewhere a img {
-  height: 1.6em;
-  width: 1.6em;
-  margin: 0.3em;
+.wf-loading #strapline, .wf-loading h2 {
+  visibility: hidden;
 }
 
 
