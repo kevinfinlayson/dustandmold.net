@@ -1,0 +1,12 @@
+- test window conditional on resize and device orientation
+- chrome images for mobile sizes
+- hi-res chrome images for retina display & retina media query
+- prevent font adjust
+- deal with font sizes and margins on mobile size
+- reduce hit areas on 'deets' links
+- debug for browser compatibility
+- favicon
+- add analytics
+- final copy edit
+- print styles?
+- 404 page
