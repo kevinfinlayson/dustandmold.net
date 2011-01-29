@@ -2,9 +2,6 @@
 */
 
 $(document).ready(function(){
-  $("#slideshow a").children("img").imagesLoaded(function(){
-    $("#pager").animate({opacity:1}, 300);
-  });
   // Add the slideshow navigation and info elements
   $("#slideshow-container").prepend('<a href="#-do" id="top-close"><span>Close</span></a><div id="pager"></div><!--! end of #pager --><a href="#" id="previous"><span>Previous</span></a><a href="#" id="next"><span>Next</span></a>');
   $("#slideshow-container").append('<div id="slide-info"><div id="slide-info-content"></div><!--! end of #slide-info-content --></div><!--! end of #slide-info -->');
@@ -23,6 +20,18 @@ $(document).ready(function(){
       return '<a href="#" class="thumb" title="' + slideTitle + '"><img src="graphics/thumb-overlay.png" alt="thumb overlay graphic" class="thumb-overlay" /><img src="' + slideImgSrc + '" alt="' + slideTitle + ' image" /><h3>' + slideTitle + '</h3></a>';
     }
   });
+  // no pager for smart phones, just slideshow
+  windowWidth = $(window).width();     // TODO fix this for resize
+  $(".slide").children("img").imagesLoaded(function(){
+    if  (windowWidth >= 768) {
+      $("#pager").show().animate({opacity:1}, 300);
+    } else {
+      $("#slideshow-container").removeClass('thumb-display');
+      $("#slideshow").show().animate({opacity:1},100);
+      $("#previous, #next, #slide-info, #slide-info-content, .slide-overlay").show().animate({opacity:1},300);
+    }
+  });
+
   // Switch from pager to slideshow
   $("#pager a").click(function(){
     $("#pager").fadeOut(100, function(){
@@ -48,6 +57,19 @@ $(document).ready(function(){
     var slideInfo = $(this).children(".slide-info").html();
     $("#slide-info-content").html(slideInfo);
     $("#slide-info-content").fadeIn(300);
+  }
+
+  // responsive conditionals
+  if (windowWidth >= 1020) {
+    $(".thumb-overlay").attr('src', 'graphics/thumb-overlay.png');
+    $(".slide-overlay").attr('src', 'graphics/slide-overlay.png');
+   } else if (windowWidth < 1020 && windowWidth >= 768 ) {
+    $(".thumb-overlay").attr('src', 'graphics/thumb-overlay-ipad.png');
+    $(".slide-overlay").attr('src', 'graphics/slide-overlay-ipad.png');
+  }  else if (windowWidth < 768 && windowWidth >= 480) {
+    $(".slide-overlay").attr('src', 'graphics/slide-overlay-iphone-landscape.png');
+  } else if (windowWidth < 480 && windowWidth >= 320) {
+    $(".slide-overlay").attr('src', 'graphics/slide-overlay-iphone.png');
   }
 })
 
