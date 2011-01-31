@@ -20,18 +20,6 @@ $(document).ready(function(){
       return '<a href="#" class="thumb" title="' + slideTitle + '"><img src="graphics/thumb-overlay.png" alt="thumb overlay graphic" class="thumb-overlay" /><img src="' + slideImgSrc + '" alt="' + slideTitle + ' image" /><h3>' + slideTitle + '</h3></a>';
     }
   });
-  // no pager for smart phones, just slideshow
-  windowWidth = $(window).width();     // TODO fix this for resize
-  $(".slide").children("img").imagesLoaded(function(){
-    if  (windowWidth >= 768) {
-      $("#pager").show().animate({opacity:1}, 300);
-    } else {
-      $("#slideshow-container").removeClass('thumb-display');
-      $("#slideshow").show().animate({opacity:1},100);
-      $("#previous, #next, #slide-info, #slide-info-content, .slide-overlay").show().animate({opacity:1},300);
-    }
-  });
-
   // Switch from pager to slideshow
   $("#pager a").click(function(){
     $("#pager").fadeOut(100, function(){
@@ -58,19 +46,46 @@ $(document).ready(function(){
     $("#slide-info-content").html(slideInfo);
     $("#slide-info-content").fadeIn(300);
   }
-
-  // responsive conditionals
-  if (windowWidth >= 1020) {
-    $(".thumb-overlay").attr('src', 'graphics/thumb-overlay.png');
-    $(".slide-overlay").attr('src', 'graphics/slide-overlay.png');
-   } else if (windowWidth < 1020 && windowWidth >= 768 ) {
-    $(".thumb-overlay").attr('src', 'graphics/thumb-overlay-ipad.png');
-    $(".slide-overlay").attr('src', 'graphics/slide-overlay-ipad.png');
-  }  else if (windowWidth < 768 && windowWidth >= 480) {
-    $(".slide-overlay").attr('src', 'graphics/slide-overlay-iphone-landscape.png');
-  } else if (windowWidth < 480 && windowWidth >= 320) {
-    $(".slide-overlay").attr('src', 'graphics/slide-overlay-iphone.png');
+  function onResize() {
+    var windowWidth = $(window).width();
+    if (windowWidth >= 1020) {
+      $(".thumb-overlay").attr('src', 'graphics/thumb-overlay.png');
+      $(".slide-overlay").attr('src', 'graphics/slide-overlay.png');
+      $("#slideshow-container").addClass('thumb-display');
+      $("#slideshow, #previous, #next, #slide-info, #slide-info-content, #top-close, .slide-overlay").css({"opacity":"0"}).hide();
+      $("#pager").show().css({"opacity":"1"});
+     } else if (windowWidth < 1020 && windowWidth >= 768 ) {
+      $(".thumb-overlay").attr('src', 'graphics/thumb-overlay-ipad.png');
+      $(".slide-overlay").attr('src', 'graphics/slide-overlay-ipad.png');
+      $("#slideshow-container").addClass('thumb-display');
+      $("#slideshow, #previous, #next, #slide-info, #slide-info-content, #top-close, .slide-overlay").css({"opacity":"0"}).hide();
+      $("#pager").show().css({"opacity":"1"});
+    }  else if (windowWidth < 768 && windowWidth >= 480) {
+      $(".slide-overlay").attr('src', 'graphics/slide-overlay-iphone-landscape.png');
+      $("#slideshow-container").removeClass('thumb-display');
+      $("#slideshow, #previous, #next, #slide-info, #slide-info-content, .slide-overlay").css({"opacity":"1"}).show();
+      $("#pager").css({"opacity":"0"}).hide();
+    } else if (windowWidth < 480 && windowWidth >= 320) {
+      $(".slide-overlay").attr('src', 'graphics/slide-overlay-iphone.png');
+      $("#slideshow-container").removeClass('thumb-display');
+      $("#slideshow, #previous, #next, #slide-info, #slide-info-content, .slide-overlay").css({"opacity":"1"}).show();
+      $("#pager").css({"opacity":"0"}).hide();
+    }
   }
+  $(".slide").children("img").imagesLoaded(function(){
+    var windowWidth = $(window).width();
+    if (windowWidth >= 768) {
+      $("#slideshow-container").addClass("thumb-display");
+      $("#pager").show().animate({opacity:1},100);
+    } else {
+      $("#pager").css({"opacity":"0"}).hide();
+      $("#slideshow").show().animate({opacity:1},100);
+    }
+  });
+  $(window).resize(function(){
+    console.log("resized!");
+    onResize();
+  });
 })
 
 
