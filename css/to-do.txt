@@ -1,6 +1,5 @@
 - hi-res chrome images for retina display & retina media query
 - fix unwanted line on slide overlay border
-- prevent font adjust
 - hover styles for 3d elements
 - fix slideshow info text flicker
 - deal with font sizes and margins on mobile size
