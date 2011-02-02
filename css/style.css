@@ -124,6 +124,17 @@ input:invalid, textarea:invalid {
 a:link { -webkit-tap-highlight-color: #FF5E99; }
 
 button {  width: auto; overflow: visible; }
+a, :focus {
+   outline: none;
+}
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+select::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+    border: none;
+}
 
 .ie7 img { -ms-interpolation-mode: bicubic; }
 
@@ -384,8 +395,9 @@ slideshow
   float: left;
   position: relative;
   display: block;
-}
 
+
+}
 .thumb img {
   width: 300px;
   height: 244px;
@@ -408,6 +420,11 @@ slideshow
   background: transparent url(../graphics/thumb-overlay.png) no-repeat center center;
 }
 
+.ie8 .thumb-overlay, .ie7 .thumb-overlay {
+  display: none;
+  margin-top: -999em;
+}
+
 .thumb p {
   display: none;
 }
@@ -423,8 +440,8 @@ slideshow
 }
 
 .visit {
-  padding: 10px;
-  margin-bottom: 7px;
+  padding: 10px 10px 17px 10px;
+  margin-bottom: 0px;
 }
 
 a.visit-button, a.visit-button:visited {
@@ -447,6 +464,7 @@ a.visit-button, a.visit-button:visited {
   background-image:linear-gradient(top, #54b4df 0%, #2081ad 100%);
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
 
@@ -454,6 +472,10 @@ a.visit-button:hover, a.visit-button:focus {
   -webkit-box-shadow: 0px 0px 30px rgba(55,267,218,0.35);
   -moz-box-shadow: 0px 0px 30px rgba(55,267,218,0.35);
   box-shadow: 0px 0px 30px rgba(55,267,218,0.35);
+}
+
+.no-boxshadow a.visit-button:hover, .no-boxshadow a.visit-button:focus {
+  background-color: #2081ad;
 }
 
 #top-close {
@@ -483,6 +505,7 @@ a.visit-button:hover, a.visit-button:focus {
   background-image:linear-gradient(top, #54b4df 0%, #2081ad 100%);
   -webkit-transition: all 0.1s linear;
   -moz-transition: all 0.1s linear;
+  -o-transition: all 0.2s linear;
   transition: all 0.1s linear;
 }
 
@@ -494,6 +517,7 @@ a.visit-button:hover, a.visit-button:focus {
   background: transparent url(../graphics/close.png) no-repeat center center;
   -webkit-transition: all 0.1s linear;
   -moz-transition: all 0.1s linear;
+  -o-transition: all 0.2s linear;
   transition: all 0.1s linear;
 }
 
@@ -540,6 +564,7 @@ a.visit-button:hover, a.visit-button:focus {
   background-image:linear-gradient(top, #54b4df 0%, #2081ad 100%);
   -webkit-transition: all 0.1s linear;
   -moz-transition: all 0.1s linear;
+  -o-transition: all 0.2s linear;
   transition: all 0.1s linear;
 }
 
@@ -557,6 +582,7 @@ a.visit-button:hover, a.visit-button:focus {
   width: 30px;
   -webkit-transition: all 0.1s linear;
   -moz-transition: all 0.1s linear;
+  -o-transition: all 0.2s linear;
   transition: all 0.1s linear;
 }
 
@@ -587,6 +613,36 @@ a.visit-button:hover, a.visit-button:focus {
 
 #previous:active, #next:active {
   margin-top: 0px;
+}
+
+.no-csstransitions #previous:hover, .no-csstransitions #previous:focus, .no-csstransitions #next:hover, .no-csstransitions #next:focus {
+  margin-top: 0px;
+  background-color: #2081ad;
+  height: 30px;
+  width: 30px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+
+.no-csstransitions #top-close:hover, .no-csstransitions #top-close:focus {
+   margin-top: 0px;
+  background-color: #2081ad;
+  height: 20px;
+  width: 20px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.no-csstransitions #top-close:hover span, .no-csstransitions #top-close:focus span {
+  height: 20px;
+  width: 20px;
+}
+
+.no-csstransitions #previous:hover span, .no-csstransitions #previous:focus span, .no-csstransitions #next:hover span, .no-csstransitions #previous:hover span {
+  height: 30px;
+  width: 30px;
 }
 
 
@@ -662,11 +718,10 @@ contact
 
 #project-sheet-container {
   padding: 10px 0px;
-  margin-bottom: 20px;
 }
 
 #project-sheet {
-  display: inline;
+  display: inline-block;
   color: #fff;
   font-size: 0.875em;
   background-color: #37a7da;
@@ -685,7 +740,13 @@ contact
   background-image:linear-gradient(top, #54b4df 0%, #2081ad 100%);
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
+}
+
+.ie7 #project-sheet {
+  display: inline;
+  margin-bottom: 20px;
 }
 
 #project-sheet a, #project-sheet a:visited {
@@ -695,10 +756,22 @@ contact
   padding: 5px 10px 5px 34px;
 }
 
+.no-borderradius #project-sheet {
+  padding: 8px 10px;
+}
+
+.no-borderradius #project-sheet a {
+  padding: 6px 5px 4px 34px;
+}
+
 #project-sheet:hover, #project-sheet:focus {
   -webkit-box-shadow: 0px 0px 30px rgba(55,267,218,0.35);
   -moz-box-shadow: 0px 0px 30px rgba(55,267,218,0.35);
   box-shadow: 0px 0px 30px rgba(55,267,218,0.35);
+}
+
+.no-boxshadow #project-sheet:hover, .no-box-shadow #project-sheet:focus {
+  background-color: #2081ad;
 }
 
 #deets ul li {
@@ -707,9 +780,11 @@ contact
 
 #deets ul li a, #mail {
   height: 16px;
-  padding: 3px 0px 2px 34px;
+  line-height: 1.3  ;
+  padding: 4px 0px 4px 34px;
   background-repeat: no-repeat;
   background-position: left 0px;
+  display: inline-block;
 }
 
 #deets ul li a:hover, #deets ul li a:focus,  #mail:hover, #mail:focus {
@@ -865,7 +940,7 @@ webfont
   footer { width: 280px; }
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), (max-width: 767px) and (min-width: 480px)  {  /* retina graphics */
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {  /* retina graphics */
   #deets li a { background-size: 24px 48px; }
   #slideshow-container { background-image: url(../graphics/slideshow-bg-retina.png); background-size: 60px 60px; }
   #mail { background-image: url(../graphics/mail-retina.png); }

@@ -34,18 +34,20 @@ $(document).ready(function(){
     $("#pager").fadeOut(100, function(){
       $(this).hide();
       $("#slideshow-container").removeClass('thumb-display');
+      // $("#slideshow").show().animate({opacity:1},100);
       $("#slideshow").show().animate({opacity:1},100);
       $("#previous, #next, #slide-info, #slide-info-content, #top-close, .slide-overlay").show().animate({opacity:1},300);
     });
   });
   // Switch from slideshow back to pager
-  $("#close, #top-close").click(function(e){
-    e.preventDefault();
-    $("#slideshow, #previous, #next, #slide-info, #slide-info-content, #top-close, .slide-overlay").fadeOut(100, function(){
+  $("#top-close").click(function(e){
+    $("#slide-info, #slide-info-content, #top-close, #next, #previous, .slide-overlay").fadeOut(100);
+    $("#slideshow").fadeOut(100, function(){
       $(this).hide();
       $("#slideshow-container").addClass('thumb-display');
       $("#pager").show().animate({opacity:1},100);
     })
+    e.preventDefault();
   })
   function onResize() {
     var windowWidth = $(window).width();
@@ -67,19 +69,16 @@ $(document).ready(function(){
       $("#pager").css({"opacity":"0"}).hide();
     }
   }
-  $(".slide").children("img").imagesLoaded(function(){
-    var windowWidth = $(window).width();
-    if (windowWidth >= 768) {
-      $("#slideshow-container").addClass("thumb-display");
-      $("#pager").show().animate({opacity:1},100);
-    } else {
-      $("#pager").css({"opacity":"0"}).hide();
-      $("#slideshow, #previous, #next, #slide-info, #slide-info-content, .slide-overlay").show().animate({opacity:1},100);
-    }
-  });
+  var windowWidth = $(window).width();
+  if (windowWidth >= 768) {
+    $("#slideshow-container").addClass("thumb-display");
+    $("#pager").show().animate({opacity:1},100);
+  } else {
+    $("#pager").css({"opacity":"0"}).hide();
+    $("#slideshow, #previous, #next, #slide-info, #slide-info-content, .slide-overlay").show().animate({opacity:1},100);
+  }
   $(window).resize(function(){
     var width = $(window).width();
-    console.log(width);
     onResize();
   });
 })
