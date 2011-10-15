@@ -121,9 +121,10 @@ input:invalid, textarea:invalid {
 ::-moz-selection{ background: #a5e3ff; color:#161a1b; text-shadow: none; }
 ::selection { background:#a5e3ff; color: #161a1b; text-shadow: none; }
 
-a:link { -webkit-tap-highlight-color: #FF5E99; }
+a:link { -webkit-tap-highlight-color: #37a7da; }
 
 button {  width: auto; overflow: visible; }
+
 a, :focus {
    outline: none;
 }
@@ -879,8 +880,8 @@ webfont
 @media only screen and (max-width: 767px) and (min-width: 480px) { /* iPhone landscape and other small viewports */
   #content { width: 480px; }
   #strapline { width: 440px; margin: 0px 20px 20px 20px; }
-  #strapline p { font-size: 2em; margin-bottom: 10px;}
-  #slideshow-container { width: 408px; padding: 16px; min-height: 200px; }
+  #strapline p { font-size: 2.5em; margin-bottom: 10px;}
+  #slideshow-container { width: 408px; padding: 16px; min-height: 200px; margin-bottom: 40px; }
   #slideshow { width: 408px; height: 336px; }
   .slide { width: 408px !important; }
   .slide img { width: 400px; height: 328px; padding: 4px; }
@@ -889,14 +890,15 @@ webfont
   #slide-info { width: 400px; padding: 10px 0px 0px 0px; }
   #previous, #next { top: 170px; }
   .visit { margin-bottom: 4px; }
-  h2 { font-size: 1.5em; width: 440px; padding: 0px 20px; margin-bottom: 20px; }
-  section { width: 480px; }
+  h2 { font-size: 1.5em; width: 440px; padding: 0px 20px; margin-bottom: 40px; }
+  section { width: 480px; margin-bottom: 20px; }
   #why-me, #process, #tools { width: 440px; margin-bottom: 20px; }
   #tools { width: 460px; padding: 0px 0px 0px 20px; margin-bottom: 0px;}
   section h4 { text-align: center; }
   #tools ul li { width: 460px; float: left; }
   #tools ul li ul { margin-bottom: 0px; }
   #tools ul li ul li { width: 210px; margin: 0px 20px 0px 0px; }
+  h4 { font-size: 75%; }
   #beliefs li ul li { width: 390px; }
   #contact h2 { width: 440px; }
   #contact h4 { display: none; }
@@ -912,7 +914,7 @@ webfont
   #content { width: 320px; }
   #strapline { width: 280px; margin: 0px 20px 20px 20px; }
   #strapline p { font-size: 1.5em; margin-bottom: 10px;}
-  #slideshow-container { width: 248px; padding: 16px; min-height: 200px; }
+  #slideshow-container { width: 248px; padding: 16px; min-height: 200px; margin-bottom: 40px; }
   #slideshow { width: 248px; height: 205px; }
   .slide { width: 248px !important; }
   .slide img { width: 240px; height: 197px; padding: 4px; }
@@ -921,14 +923,15 @@ webfont
   #slide-info { width: 240px; padding: 10px 0px 0px 0px; }
   #previous, #next { top: 103px; }
   .visit { margin-bottom: 4px; }
-  h2 { font-size: 1.25em; width: 280px; padding: 0px 20px; margin-bottom: 20px; }
-  section { width: 320px; }
+  h2 { font-size: 1.25em; width: 280px; padding: 0px 20px; margin-bottom: 40px; }
+  section { width: 320px; margin-bottom: 20px; }
   #why-me, #process, #tools { width: 280px; margin-bottom: 20px; }
   #tool { margin-bottom: 0px; }
   section h4 { text-align: center; padding-right: 20px; }
   #tools ul li { width: 280px; float: left; margin-bottom: 0px; }
   #tools ul li ul { margin-bottom: 0px; }
   #tools ul li ul li { width: 280px; }
+  h4 { font-size: 75%; }
   #beliefs li ul li { width: 230px; margin-bottom: 10px; }
   #contact h2 { width: 280px; }
   #contact h4 { display: none; }
