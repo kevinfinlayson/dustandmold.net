@@ -958,11 +958,11 @@ webfont
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape), only screen and (min-device-pixel-ratio: 2) and (orientation: landscape) {   /* retina graphics: landscape */
-  .slide-overlay { background-image: url(../graphics/slide-overlay-iphone-landscape-retina.png); background-size: 408px; height: 336px; }
+  /* .slide-overlay { background-image: url(../graphics/slide-overlay-iphone-landscape-retina.png); background-size: 408px; height: 336px; } */
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait), only screen and (min-device-pixel-ratio: 2) and (orientation: portrait) {  /* retina graphics: portrai */
-  .slide-overlay { background-image: url(../graphics/slide-overlay-iphone-retina.png); background-size: 248px; height: 205px; }
+  /* .slide-overlay { background-image: url(../graphics/slide-overlay-iphone-retina.png); background-size: 248px; height: 205px; } */
 }
 
 /*
